@@ -37,7 +37,7 @@ export function createMcpApp(
   const app = express();
 
   app.use(express.json({ limit: "1mb" }));
-  app.use(validateOrigin);
+  // app.use(validateOrigin);
   app.use((req, _res, next) => {
     console.log(`[http] ${req.method} ${req.path}`);
     next();

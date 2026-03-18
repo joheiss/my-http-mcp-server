@@ -10,8 +10,8 @@ const app = createMcpApp(createMcpServer);
  * For local MCP servers this is the safer default and aligns with the MCP
  * transport security guidance.
  */
-app.listen(port, "127.0.0.1", () => {
+app.listen(port, "localhost", () => {
   console.log(
-    `[mcp] Streamable HTTP server listening on http://127.0.0.1:${port}/mcp`,
+    `[mcp] Streamable HTTP server listening on http://localhost:${port}/mcp`,
   );
 });
