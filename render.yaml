@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: my-http-mcp-server
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run typecheck
+    startCommand: npm start
+    envVars:
+      - key: HOST
+        value: 0.0.0.0

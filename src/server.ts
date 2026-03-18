@@ -2,16 +2,17 @@ import { createMcpApp } from "./http/createMcpApp.js";
 import { createMcpServer } from "./mcp/createMcpServer.js";
 
 const port = Number(process.env.PORT ?? 8787);
+const host = process.env.HOST ?? "0.0.0.0";
 const app = createMcpApp(createMcpServer);
 
 /**
- * Bind to localhost by default.
+ * Bind to all interfaces by default so hosted platforms such as Render
+ * can route traffic into the process over the provided PORT.
  *
- * For local MCP servers this is the safer default and aligns with the MCP
- * transport security guidance.
+ * For local-only development, set HOST=127.0.0.1 to restrict access.
  */
-app.listen(port, "localhost", () => {
+app.listen(port, host, () => {
   console.log(
-    `[mcp] Streamable HTTP server listening on http://localhost:${port}/mcp`,
+    `[mcp] Streamable HTTP server listening on http://${host}:${port}/mcp`,
   );
 });

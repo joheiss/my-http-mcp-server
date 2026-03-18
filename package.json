@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx tsx src/server.ts",
+    "dev": "tsx src/server.ts",
+    "start": "tsx src/server.ts",
+    "typecheck": "tsc --noEmit --module nodenext --moduleResolution nodenext --target es2022 --esModuleInterop src/server.ts src/http/createMcpApp.ts src/mcp/createMcpServer.ts src/services/cryptoService.ts",
     "inspector": "npx @modelcontextprotocol/inspector npm start --silent",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run typecheck"
   },
   "keywords": [],
   "author": "",
