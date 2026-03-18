@@ -1,0 +1,5 @@
+https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT
+Accept: application/json
+
+###
+https://api.binance.com/api/v3/ticker/price?symbol=eth
